@@ -4,7 +4,7 @@
 
 ---
 
-I run a team of 6 AI agents that coordinate, remember everything across sessions, and ship real products.
+I run a team of 8 AI agents that coordinate, remember everything across sessions, and ship real products.
 
 2 iOS apps live in the App Store. Multiple web apps in production. All built by my AI team.
 
@@ -15,11 +15,13 @@ Most of you are paying $200/month to talk to one agent that forgets everything e
 - Agent security rules — each agent has clear boundaries so they can't accidentally break things
 - Inbox/outbox communication — multiple agents coordinate without stepping on each other
 - Automated notifications — agents ping you when they're blocked instead of sitting silent
-- One-command setup — interactive script asks 5 questions and scaffolds your entire team
 
-I packaged my exact system into a starter kit. Run one script, answer 5 questions, open your terminals. Your AI team is ready.
+I packaged my exact system into a starter kit and built a community around it.
 
-Interested? DM me.
+Join AI Team Builders — $29/month founding member rate (locked forever for early members):
+{YOUR_SKOOL_LINK}
+
+You get the full starter kit, a step-by-step setup guide, and direct access to ask me anything. I post behind-the-scenes content weekly from my real work with my AI team.
 
 ---
 
@@ -57,9 +59,19 @@ So I built guardrails. One by one, over months, through real pain.
 
 The result? 2 iOS apps in the App Store. Multiple web apps in production. An AI brain engine. All built by my AI team while I focused on product decisions.
 
-I packaged the whole system into a starter kit. An interactive script that asks 5 questions and generates your complete team setup — identity files, memory, rules, communication, automation, everything.
+I built a community where I teach this system and help you set up your own AI team.
 
-Run the script. Open your terminals. Your AI team is ready.
+**AI Team Builders — $29/month founding member rate:**
+{YOUR_SKOOL_LINK}
+
+What you get:
+- The complete AI Team Starter Kit (setup script + templates + automation)
+- Step-by-step guide: "Set Up Your AI Team in 10 Minutes"
+- Weekly behind-the-scenes from my real work with 8 AI agents
+- Direct access to ask me anything
+- A community of builders doing the same thing
+
+First 20 members get the $29 rate locked forever. After that it goes to $49.
 
 ---
 
@@ -69,21 +81,17 @@ Run the script. Open your terminals. Your AI team is ready.
 
 Hey! Thanks for reaching out.
 
-Here's what the kit includes:
-- Interactive setup script (asks 5 questions, generates everything)
-- Identity anchor system (prevents AI drift in long sessions)
-- Persistent memory files (agents remember across sessions)
-- Security rules per agent (clear boundaries, can't break things)
-- Inbox/outbox communication (agents coordinate via files)
-- Mailroom automation (macOS notifications for new work)
-- Backup/snapshot scripts (disaster recovery)
-- 6 prebuilt roles: Team Lead, Builder, QA, Designer, Researcher, Ops
-- Full architecture docs explaining how it all works
+I built a community called AI Team Builders where I teach my exact multi-agent system and help people set up their own AI teams.
 
-Two options:
+Here's what you get as a member ($29/month):
+- The complete AI Team Starter Kit (interactive setup script, identity anchors, memory system, security rules, communication infrastructure, automation scripts, 6 prebuilt roles)
+- Step-by-step setup guide
+- Weekly behind-the-scenes posts from my real work with 8 AI agents
+- Direct access to ask me anything
+- A community of builders doing the same thing
 
-1. **Starter Kit** ($49) — Download, run the setup script, you're good to go. Includes everything above.
+I also offer a premium setup call ($500) where I hop on a call, customize the whole system for your specific business, walk you through it, and give you 1 week of follow-up support.
 
-2. **Setup Call** ($500) — I hop on a call with you, we customize the whole thing for your specific business, I walk you through how to use it, and you get 1 week of follow-up support.
+Here's the community link: {YOUR_SKOOL_LINK}
 
-Which sounds right for you?
+First 20 founding members get the $29 rate locked forever.
