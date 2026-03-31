@@ -31,7 +31,7 @@ You get the full starter kit, a step-by-step setup guide, and direct access to a
 
 ### I Accidentally Built an Operating System for AI Agents
 
-90 days ago I started using Claude Code to build an iOS app. One agent, one terminal. It was fine.
+7 weeks ago I started using Claude Code to build an iOS app. One agent, one terminal. It was fine.
 
 Then I needed more. A builder and a QA tester. Then a designer. Then a team lead to coordinate them. Before I knew it, I had 8 AI agents working in parallel.
 

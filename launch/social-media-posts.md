@@ -10,7 +10,7 @@ Use this to start conversations. Drop it in AI communities, Claude Code discussi
 
 **Body:**
 
-90 days ago I had one Claude Code terminal. One agent, no memory, starting over every session.
+7 weeks ago I had one Claude Code terminal. One agent, no memory, starting over every session.
 
 Now I run 8 coordinated AI agents. 2 iOS apps in the App Store. Multiple web apps live in production. All from my home office.
 
@@ -74,7 +74,7 @@ Use this in threads where people are complaining about AI agent problems.
 
 **Body:**
 
-I've seen this exact problem. Here's what I found after 90 days of running multi-agent Claude Code setups:
+I've seen this exact problem. Here's what I found after 7 weeks of running multi-agent Claude Code setups:
 
 **The root cause:** AI has no memory between sessions. It also loses identity during long sessions (context window compression erases your early instructions first).
 
