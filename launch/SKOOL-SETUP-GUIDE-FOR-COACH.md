@@ -1,6 +1,6 @@
 # What Is Skool and How to Set It Up
 
-## Written for Coach — Plain English, No Jargon
+## Written for Coach. Plain English, No Jargon
 
 ---
 
@@ -9,20 +9,20 @@
 Skool is a website where you can run a paid community + course in one place. Think of it like a Facebook Group that people pay to join, PLUS a course section where you can put lessons.
 
 **What members see when they join:**
-- A community feed (like a Facebook Group) — people post, you post, everyone chats
-- A course section (like a mini online school) — you put your lessons and downloads here
-- A calendar (optional) — you can schedule live calls
+- A community feed (like a Facebook Group). People post, you post, everyone chats
+- A course section (like a mini online school). You put your lessons and downloads here
+- A calendar (optional). You can schedule live calls
 
 **What makes it good for us:**
-- It costs $9/month for you to run (that's it — no percentage of sales)
+- It costs $9/month for you to run (that's it, no percentage of sales)
 - Members pay you directly through Stripe (Skool handles the billing)
-- It has a mobile app — members can access from their phone
-- Dead simple to set up — you can be live in 30 minutes
+- It has a mobile app. Members can access from their phone
+- Dead simple to set up. You can be live in 30 minutes
 
 **What Skool is NOT:**
 - It's not a website builder (your community lives on skool.com, not your own domain)
 - It's not a marketplace (people find you through YOUR marketing, not through Skool)
-- It's not complicated — there's no code, no design, just fill in boxes and paste text
+- It's not complicated. There's no code, no design, just fill in boxes and paste text
 
 ---
 
@@ -38,7 +38,7 @@ To cover Skool's cost ($9): 1 paying member.
 
 ---
 
-## How to Set It Up — Step by Step
+## How to Set It Up - Step by Step
 
 ### Step 1: Create Your Skool Account (5 minutes)
 
@@ -52,22 +52,22 @@ To cover Skool's cost ($9): 1 paying member.
 
 1. Click "Create a Group" (Skool calls communities "Groups")
 2. **Group Name:** `AI Team Builders`
-3. **Group URL:** It'll auto-suggest something like `skool.com/ai-team-builders` — that's fine
+3. **Group URL:** It'll auto-suggest something like `skool.com/ai-team-builders`, that's fine
 4. **Privacy:** Choose "Private" (paid communities must be private)
-5. **Description:** Copy and paste from the file `launch/skool-community-description.md` — I wrote all the copy for you
+5. **Description:** Copy and paste from the file `launch/skool-community-description.md`. I wrote all the copy for you
 6. Click "Create"
 
 ### Step 3: Set Up Pricing (3 minutes)
 
 1. Go to your group settings (gear icon)
 2. Find "Membership" or "Pricing"
-3. Connect your Stripe account (Skool walks you through this — you need a Stripe account, it's free to create)
+3. Connect your Stripe account (Skool walks you through this. You need a Stripe account, it's free to create)
 4. Set price to **$29/month**
 5. Save
 
 **Note:** If you don't have a Stripe account yet, Skool will walk you through creating one. You need:
 - Your bank account info (for receiving payments)
-- Your SSN (for tax purposes — Stripe requires this)
+- Your SSN (for tax purposes, Stripe requires this)
 - Takes about 10 minutes
 
 ### Step 4: Set Up Categories (3 minutes)
@@ -76,12 +76,12 @@ Categories are like channels in a Discord server. They organize your community f
 
 1. Go to your group's Community tab
 2. Look for "Categories" in settings
-3. Create these categories (I've pre-written descriptions for each — see `launch/skool-categories.md`):
+3. Create these categories (I've pre-written descriptions for each, see `launch/skool-categories.md`):
    - **General** (already exists by default)
-   - **Wins** — members share what they built
-   - **Help** — Q&A and troubleshooting
-   - **Resources** — downloads and guides
-   - **Behind the Scenes** — your weekly posts
+   - **Wins**: members share what they built
+   - **Help**: Q&A and troubleshooting
+   - **Resources**: downloads and guides
+   - **Behind the Scenes**: your weekly posts
 
 ### Step 5: Post the Welcome Message (2 minutes)
 
@@ -94,7 +94,7 @@ Categories are like channels in a Discord server. They organize your community f
 
 ### Step 6: Upload the Starter Kit (3 minutes)
 
-1. I'll zip up the starter kit for you — it'll be at `~/Projects/ai-team-starter-kit/ai-team-starter-kit.zip`
+1. I'll zip up the starter kit for you. It'll be at `~/Projects/ai-team-starter-kit/ai-team-starter-kit.zip`
 2. Go to the Community tab
 3. Select the "Resources" category
 4. Create a new post: "Download: AI Team Starter Kit v1.0"
@@ -124,7 +124,7 @@ Skool has a "Classroom" section where you can organize lessons into modules.
 ### Step 8: Upload Your Profile Photo (1 minute)
 
 1. Click your profile picture in the top-right
-2. Upload a good photo — this is your brand
+2. Upload a good photo. This is your brand
 3. Update your bio with the short version from `launch/skool-community-description.md` (bottom of that file)
 
 ### Step 9: You're Live (0 minutes)
@@ -135,17 +135,17 @@ Share that link. Anyone who clicks it can see the About page and join.
 
 ---
 
-## After Launch — What to Do Each Week
+## After Launch - What to Do Each Week
 
 ### Weekly (15 minutes total):
-- **Post 1 "Behind the Scenes" update** — just share what you built with your AI team that week. Screenshot, quick story, lesson learned. Real stuff, not polished content.
-- **Answer every question in Help** — this builds trust and retention
-- **Celebrate wins** — when a member posts in Wins, comment on it
+- **Post 1 "Behind the Scenes" update**: just share what you built with your AI team that week. Screenshot, quick story, lesson learned. Real stuff, not polished content.
+- **Answer every question in Help**: this builds trust and retention
+- **Celebrate wins**: when a member posts in Wins, comment on it
 
 ### Monthly (30 minutes):
 - Add a new lesson or resource
 - Check your member count and revenue
-- Think about what questions keep coming up — turn those into lessons
+- Think about what questions keep coming up, turn those into lessons
 
 ### That's It
 Skool runs itself. Members join, they access the community and course, they pay you monthly. Your only job is posting weekly and answering questions.
@@ -169,6 +169,6 @@ Skool runs itself. Members join, they access the community and course, they pay 
 
 ## If You Get Stuck
 
-Text me (Cortex) what's happening and I'll walk you through it. Or just Google "Skool [your question]" — there are tons of YouTube tutorials since Skool is very popular right now.
+Text me (Cortex) what's happening and I'll walk you through it. Or just Google "Skool [your question]". There are tons of YouTube tutorials since Skool is very popular right now.
 
 The hardest part is connecting Stripe. Everything else is just copying and pasting the text I already wrote for you.

@@ -1,15 +1,15 @@
-# Welcome Post — Pin This in the Community
+# Welcome Post - Pin This in the Community
 ## Copy and paste into Skool as your first post
 
 ---
 
-**Title:** Welcome to AI Team Builders — Start Here
+**Title:** Welcome to AI Team Builders - Start Here
 
 **Body:**
 
 Welcome! You're one of the first people here, and that matters.
 
-I'm Daniel. I'm not a traditional developer — I'm a product builder who directs AI coding agents. I have 2 iOS apps live in the App Store and multiple web apps in production, all built by a team of 8 AI agents I coordinate from my home office.
+I'm Daniel. I'm not a traditional developer. I'm a product builder who directs AI coding agents. I have 2 iOS apps live in the App Store and multiple web apps in production, all built by a team of 8 AI agents I coordinate from my home office.
 
 Here's why I built this community:
 
@@ -31,8 +31,8 @@ Now I have a system that works. And I packaged it for you.
 
 If you get stuck, post in Help/Q&A. I'm here and I respond.
 
-Every week I'll share what I'm building with my AI team — real work, real bugs, real lessons. This isn't theory. This is what I use every day.
+Every week I'll share what I'm building with my AI team . Real work, real bugs, real lessons. This isn't theory. This is what I use every day.
 
 Let's build.
 
-— Daniel
+-- Daniel

@@ -5,7 +5,7 @@
 
 ### Category 1: General
 **Name:** General
-**Description:** Main discussion — questions, ideas, and conversation about AI agent teams.
+**Description:** Main discussion. Questions, ideas, and conversation about AI agent teams.
 **Notes:** This is Skool's default. Keep it.
 
 ### Category 2: Wins

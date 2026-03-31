@@ -1,4 +1,4 @@
-# First Behind the Scenes Post — Ready to Paste into Skool
+# First Behind the Scenes Post - Ready to Paste into Skool
 
 ## Post this in the "Behind the Scenes" category during your first week
 
@@ -8,7 +8,7 @@
 
 **Body:**
 
-Welcome to Behind the Scenes. Every week I share what's actually happening with my AI team — no theory, just real work.
+Welcome to Behind the Scenes. Every week I share what's actually happening with my AI team. No theory, just real work.
 
 This week: a walkthrough of how my team is set up and what a typical build session looks like.
 
@@ -18,15 +18,15 @@ This week: a walkthrough of how my team is set up and what a typical build sessi
 
 I run two sub-teams, each with a Team Lead:
 
-**Team 1 — Build Team (Relay)**
-- Relay (Team Lead) — coordinates build + QA
-- Bolt (Builder) — writes all the code
-- Keeper (QA) — tests everything
+**Team 1: Build Team (Relay)**
+- Relay (Team Lead): coordinates build + QA
+- Bolt (Builder): writes all the code
+- Keeper (QA): tests everything
 
-**Team 2 — Brain Team (Cortex)**
-- Cortex (Team Lead + Architect) — AI features, intelligence
-- Axon (Builder) — implements brain features
-- Reflex (QA) — tests accuracy and AI outputs
+**Team 2: Brain Team (Cortex)**
+- Cortex (Team Lead + Architect): AI features, intelligence
+- Axon (Builder): implements brain features
+- Reflex (QA): tests accuracy and AI outputs
 
 Plus two independent agents: Forge (full-stack builder) and Patch (design + QA).
 
@@ -56,7 +56,7 @@ Total time from me: about 10 minutes of actual involvement. The rest was the AI 
 
 **What Broke This Week:**
 
-Honesty time. My builder agent drifted during a long session — started suggesting design changes when it's supposed to focus on backend code. Classic identity drift.
+Honesty time. My builder agent drifted during a long session. Started suggesting design changes when it's supposed to focus on backend code. Classic identity drift.
 
 Fix: I told it "identity check" and it re-read its anchor file. Back on track in 30 seconds.
 
@@ -79,8 +79,8 @@ Memory files work best when they're specific. Instead of "Worked on the landing 
 
 ---
 
-That's week 1. Ask me anything in the comments — I'll answer everything.
+That's week 1. Ask me anything in the comments. I'll answer everything.
 
 Next week: how the memory system prevented a major bug from recurring.
 
-— Daniel
+-- Daniel

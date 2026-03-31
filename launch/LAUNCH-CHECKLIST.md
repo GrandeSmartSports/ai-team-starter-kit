@@ -1,11 +1,11 @@
-# Launch Checklist — Go Live Today
+# Launch Checklist - Go Live Today
 
 ## Everything is ready. Follow these steps in order.
 
 ---
 
 ### Step 1: Create Skool Account (15 min)
-- [ ] Read `launch/SKOOL-SETUP-GUIDE-FOR-COACH.md` — explains everything in plain English
+- [ ] Read `launch/SKOOL-SETUP-GUIDE-FOR-COACH.md`, explains everything in plain English
 - [ ] Go to skool.com and create an account
 - [ ] Create a group called "AI Team Builders"
 - [ ] Set pricing to $29/month
@@ -17,7 +17,7 @@
 - [ ] Upload `ai-team-starter-kit.zip` in Resources (the zip is at the project root)
 - [ ] Post the Start Here guide from `launch/start-here-guide.md` in Resources → pin it
 - [ ] Add Module 1 lessons to the Classroom tab (copy from `course/module-1/`)
-- [ ] (Optional) Add Modules 2-4 — can do this over the next few days
+- [ ] (Optional) Add Modules 2-4, can do this over the next few days
 
 ### Step 3: Update Links (5 min)
 - [ ] Copy your Skool community URL

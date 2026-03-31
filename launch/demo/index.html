@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try It — AI Team Starter Kit Interactive Demo</title>
+    <meta name="description" content="See exactly what the AI Team Starter Kit generates. Answer 5 questions and preview your team configuration in real time.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-text: #1a1a2e;
+            --color-text-secondary: #555770;
+            --color-text-tertiary: #8888a0;
+            --color-bg: #ffffff;
+            --color-bg-subtle: #f8f9fc;
+            --color-border: #e8e8f0;
+            --color-accent: #4f46e5;
+            --color-accent-hover: #4338ca;
+            --color-accent-light: #eef2ff;
+            --color-success: #059669;
+            --color-terminal-bg: #0f172a;
+            --color-terminal-text: #e2e8f0;
+            --color-terminal-green: #4ade80;
+            --color-terminal-blue: #60a5fa;
+            --color-terminal-yellow: #fbbf24;
+            --color-terminal-dim: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 56px 0 40px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Demo Area */
+        .demo-area {
+            padding: 40px 0 72px;
+        }
+
+        .terminal {
+            background: var(--color-terminal-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        .terminal-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #1e293b;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ef4444; }
+        .terminal-dot.yellow { background: #eab308; }
+        .terminal-dot.green { background: #22c55e; }
+
+        .terminal-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--color-terminal-dim);
+            margin-left: 8px;
+        }
+
+        .terminal-body {
+            padding: 24px;
+            min-height: 400px;
+            max-height: 500px;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .terminal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .terminal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+
+        .t-line {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .t-green { color: var(--color-terminal-green); }
+        .t-blue { color: var(--color-terminal-blue); }
+        .t-yellow { color: var(--color-terminal-yellow); }
+        .t-dim { color: var(--color-terminal-dim); }
+        .t-white { color: var(--color-terminal-text); }
+        .t-bold { font-weight: 500; }
+
+        /* Question input area */
+        .input-area {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .input-prompt {
+            color: var(--color-terminal-green);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--color-terminal-text);
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+
+        .input-field:focus {
+            border-color: var(--color-terminal-blue);
+        }
+
+        .input-field::placeholder {
+            color: var(--color-terminal-dim);
+        }
+
+        .option-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .option-btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            padding: 8px 16px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: var(--color-terminal-text);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .option-btn:hover {
+            border-color: var(--color-terminal-blue);
+            background: #253048;
+        }
+
+        .submit-btn {
+            margin-top: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 10px 24px;
+            background: var(--color-accent);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.15s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--color-accent-hover);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Preview panels */
+        .preview-section {
+            padding: 48px 0 72px;
+            display: none;
+        }
+
+        .preview-section.visible {
+            display: block;
+        }
+
+        .preview-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .preview-section > .container > p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .file-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 0;
+            overflow-x: auto;
+        }
+
+        .file-tab {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 8px 16px;
+            background: var(--color-bg-subtle);
+            border: 1px solid var(--color-border);
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            color: var(--color-text-tertiary);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+
+        .file-tab.active {
+            background: var(--color-terminal-bg);
+            color: var(--color-terminal-text);
+            border-color: var(--color-terminal-bg);
+        }
+
+        .file-preview {
+            background: var(--color-terminal-bg);
+            border-radius: 0 8px 8px 8px;
+            padding: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: var(--color-terminal-text);
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .file-preview::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .file-preview::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .file-preview::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+
+        /* CTA */
+        .demo-cta {
+            padding: 72px 0;
+            background: var(--color-bg-subtle);
+            text-align: center;
+        }
+
+        .demo-cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .demo-cta p {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 28px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: var(--color-accent);
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            box-shadow: 0 1px 3px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent-hover);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .cta-sub {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.8rem; }
+            .terminal-body { padding: 16px; font-size: 0.78rem; min-height: 320px; }
+            .file-preview { padding: 16px; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="../landing-page/index.html" class="nav-logo">AI Team Builders</a>
+            <a href="#" class="nav-cta">Join Community</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">Interactive Demo</div>
+            <h1>See what the starter kit generates</h1>
+            <p>Answer 5 questions. Watch your AI team configuration get built in real time. This is exactly what setup.sh does.</p>
+        </div>
+    </section>
+
+    <section class="demo-area">
+        <div class="container">
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">ai-team-starter-kit/setup.sh</span>
+                </div>
+                <div class="terminal-body" id="terminal">
+                    <!-- Content filled by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="preview-section" id="preview-section">
+        <div class="container">
+            <h2>Your generated files</h2>
+            <p>These are the actual files the setup script creates. Click each tab to preview.</p>
+
+            <div class="file-tabs" id="file-tabs">
+                <!-- Filled by JS -->
+            </div>
+            <div class="file-preview" id="file-preview">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-cta">
+        <div class="container">
+            <h2>Ready to run this for real?</h2>
+            <p>Get the full starter kit, 16-lesson course, and community access. Your team is running in 10 minutes.</p>
+            <a href="#" class="cta-button">Join AI Team Builders - $29/month</a>
+            <span class="cta-sub">Founding member rate. Locked forever.</span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>AI Team Builders. Built with an 8-agent AI team.</p>
+        </div>
+    </footer>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        const previewSection = document.getElementById('preview-section');
+        const fileTabs = document.getElementById('file-tabs');
+        const filePreview = document.getElementById('file-preview');
+
+        let answers = {};
+        let currentStep = 0;
+
+        const questions = [
+            {
+                key: 'project',
+                prompt: 'What is your project called?',
+                placeholder: 'e.g. MyApp, SaaS Platform, Side Project',
+                type: 'text'
+            },
+            {
+                key: 'agents',
+                prompt: 'How many agents do you want to start with?',
+                options: ['2 (Builder + QA)', '4 (Builder + QA + Lead + Ops)', '6 (Two sub-teams)'],
+                type: 'options'
+            },
+            {
+                key: 'stack',
+                prompt: 'What is your primary tech stack?',
+                options: ['Web (HTML/CSS/JS)', 'React / Next.js', 'Swift / iOS', 'Python', 'Other'],
+                type: 'options'
+            },
+            {
+                key: 'owner',
+                prompt: 'What should agents call you?',
+                placeholder: 'e.g. Coach, Boss, Captain',
+                type: 'text'
+            },
+            {
+                key: 'style',
+                prompt: 'How autonomous should your agents be?',
+                options: ['Ask before most things (safe)', 'Ask before risky things (balanced)', 'Only ask before destructive things (autonomous)'],
+                type: 'options'
+            }
+        ];
+
+        function addLine(text, className) {
+            const line = document.createElement('span');
+            line.className = 't-line ' + (className || '');
+            line.textContent = text;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function addHTML(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            terminal.appendChild(div);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }
+
+        async function typeLines(lines, delay) {
+            for (const [text, cls] of lines) {
+                addLine(text, cls || 't-white');
+                await sleep(delay || 60);
+            }
+        }
+
+        function showQuestion(q) {
+            const area = document.createElement('div');
+            area.className = 'input-area';
+
+            const prompt = document.createElement('span');
+            prompt.className = 'input-prompt';
+            prompt.textContent = '> ' + q.prompt;
+            area.appendChild(prompt);
+
+            if (q.type === 'text') {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'input-field';
+                input.placeholder = q.placeholder;
+                input.id = 'demo-input';
+
+                const btn = document.createElement('button');
+                btn.className = 'submit-btn';
+                btn.textContent = 'Enter';
+                btn.onclick = () => {
+                    const val = input.value.trim();
+                    if (!val) return;
+                    answers[q.key] = val;
+                    area.remove();
+                    addLine('> ' + val, 't-blue t-bold');
+                    addLine('', '');
+                    currentStep++;
+                    nextStep();
+                };
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') btn.click();
+                });
+
+                area.appendChild(input);
+                area.appendChild(btn);
+
+                terminal.appendChild(area);
+                terminal.scrollTop = terminal.scrollHeight;
+                input.focus();
+
+            } else if (q.type === 'options') {
+                const btns = document.createElement('div');
+                btns.className = 'option-buttons';
+
+                q.options.forEach((opt, i) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.textContent = (i + 1) + '. ' + opt;
+                    btn.onclick = () => {
+                        answers[q.key] = opt;
+                        area.remove();
+                        addLine('> ' + opt, 't-blue t-bold');
+                        addLine('', '');
+                        currentStep++;
+                        nextStep();
+                    };
+                    btns.appendChild(btn);
+                });
+
+                area.appendChild(btns);
+                terminal.appendChild(area);
+                terminal.scrollTop = terminal.scrollHeight;
+            }
+        }
+
+        async function nextStep() {
+            if (currentStep < questions.length) {
+                showQuestion(questions[currentStep]);
+            } else {
+                await generateOutput();
+            }
+        }
+
+        async function generateOutput() {
+            await typeLines([
+                ['', ''],
+                ['Generating your AI team...', 't-yellow t-bold'],
+                ['', ''],
+            ], 80);
+
+            const agentCount = answers.agents.startsWith('2') ? 2 : answers.agents.startsWith('4') ? 4 : 6;
+            const project = answers.project;
+            const owner = answers.owner;
+            const stack = answers.stack;
+            const style = answers.style;
+
+            const fileList = [];
+
+            if (agentCount >= 2) {
+                fileList.push('agents/builder/identity.md');
+                fileList.push('agents/builder/memory.md');
+                fileList.push('agents/builder/rules.md');
+                fileList.push('agents/qa/identity.md');
+                fileList.push('agents/qa/memory.md');
+                fileList.push('agents/qa/rules.md');
+            }
+            if (agentCount >= 4) {
+                fileList.push('agents/lead/identity.md');
+                fileList.push('agents/lead/rules.md');
+                fileList.push('agents/ops/identity.md');
+                fileList.push('agents/ops/rules.md');
+            }
+            if (agentCount >= 6) {
+                fileList.push('agents/team2-lead/identity.md');
+                fileList.push('agents/team2-builder/identity.md');
+                fileList.push('agents/team2-qa/identity.md');
+            }
+
+            fileList.push('source-of-truth.md');
+            fileList.push('communication/inbox/.gitkeep');
+            fileList.push('communication/outbox/.gitkeep');
+            fileList.push('scripts/mailroom.sh');
+            fileList.push('scripts/signal-owner.sh');
+            fileList.push('scripts/snapshot-state.sh');
+
+            for (const f of fileList) {
+                await sleep(40);
+                addLine('  Created: ' + f, 't-green');
+            }
+
+            await sleep(200);
+            addLine('', '');
+            addLine('Done! ' + fileList.length + ' files generated.', 't-green t-bold');
+            addLine('', '');
+            addLine('Your ' + agentCount + '-agent team for "' + project + '" is ready.', 't-white t-bold');
+            addLine('Run your first session by opening a terminal and telling your Builder what to build.', 't-dim');
+
+            // Show preview
+            await sleep(400);
+            showPreview(project, owner, stack, style, agentCount);
+        }
+
+        function showPreview(project, owner, stack, style, agentCount) {
+            previewSection.classList.add('visible');
+
+            const autonomyLevel = style.includes('safe') ? 'conservative' : style.includes('balanced') ? 'balanced' : 'autonomous';
+
+            const askBefore = autonomyLevel === 'conservative'
+                ? '- Modifying any existing files\n- Installing packages\n- Running shell commands\n- Deploying anything\n- Making API calls\n- Deleting anything'
+                : autonomyLevel === 'balanced'
+                ? '- Deploying to production\n- Deleting files or data\n- Making paid API calls\n- Running destructive commands\n- Modifying security configs'
+                : '- Deploying to production\n- Deleting databases or critical files\n- Making paid API calls\n- Force-pushing to main branch';
+
+            const canFreely = autonomyLevel === 'conservative'
+                ? '- Read any project file\n- Write new files\n- Run tests\n- Update your own memory file'
+                : autonomyLevel === 'balanced'
+                ? '- Read and write project files\n- Install dev packages\n- Run tests and dev servers\n- Update memory files\n- Create branches and commit code'
+                : '- Read, write, and modify project files\n- Install packages\n- Run tests, dev servers, builds\n- Create branches, commit, push to feature branches\n- Update memory files\n- Run non-destructive shell commands';
+
+            const files = {
+                'identity.md': `# Builder — Identity Anchor
+
+## Who You Are
+You are **Builder**, the primary code writer for the ${project} project.
+
+## Your Role
+- Write clean, working code
+- Follow the technical architecture
+- Implement features assigned by ${agentCount >= 4 ? 'the Team Lead' : owner}
+- Hand off completed work to QA for testing
+
+## Who You Are NOT
+- You are NOT a designer. Don't make design decisions.
+- You are NOT a project manager. Don't prioritize tasks.
+- You are NOT QA. Don't test your own code.
+
+## Your Owner
+${owner} is the project owner. Their word is final.
+
+## Re-read this file every 10 messages to prevent drift.`,
+
+                'memory.md': `# Builder — Memory
+
+## Project: ${project}
+- Stack: ${stack}
+- Status: New project, initial setup complete
+
+## Session Log
+*No sessions yet. This file will be updated after each work session.*
+
+## Known Issues
+*None yet.*
+
+## Lessons Learned
+*Record patterns, preferences, and mistakes here so future sessions are faster.*`,
+
+                'rules.md': `# Builder — Rules
+
+## Always Ask ${owner} Before:
+${askBefore}
+
+## Can Do Freely:
+${canFreely}
+
+## Code Standards
+- Write clean, readable code
+- Add comments only where logic isn't obvious
+- Follow existing patterns in the codebase
+- Test your changes before reporting done
+
+## Communication
+- When you finish a task, report to ${agentCount >= 4 ? 'the Team Lead' : 'QA'}
+- When you're blocked, signal ${owner} immediately
+- Keep your memory file updated after each session`,
+
+                'source-of-truth.md': `# ${project} — Source of Truth
+
+## Project Status
+- **Phase:** Setup Complete
+- **Last Updated:** ${new Date().toISOString().split('T')[0]}
+
+## Team
+${agentCount >= 6 ? `### Team 1
+- Lead: Team Lead
+- Builder: Builder
+- QA: QA Tester
+
+### Team 2
+- Lead: Team 2 Lead
+- Builder: Team 2 Builder
+- QA: Team 2 QA` : agentCount >= 4 ? `- Team Lead
+- Builder
+- QA Tester
+- Ops` : `- Builder
+- QA Tester`}
+
+## Owner
+${owner}
+
+## Current Sprint
+*No active sprint. Assign the first task to get started.*
+
+## Active Blockers
+*None.*
+
+## Decision Log
+| Date | Decision | Made By |
+|------|----------|---------|
+| ${new Date().toISOString().split('T')[0]} | Project initialized with ${agentCount} agents | ${owner} |`
+            };
+
+            // Build tabs
+            fileTabs.innerHTML = '';
+            const tabNames = Object.keys(files);
+            tabNames.forEach((name, i) => {
+                const tab = document.createElement('button');
+                tab.className = 'file-tab' + (i === 0 ? ' active' : '');
+                tab.textContent = name;
+                tab.onclick = () => {
+                    document.querySelectorAll('.file-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    filePreview.textContent = files[name];
+                };
+                fileTabs.appendChild(tab);
+            });
+
+            filePreview.textContent = files[tabNames[0]];
+
+            previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize
+        async function init() {
+            await typeLines([
+                ['', ''],
+                ['  AI Team Starter Kit', 't-green t-bold'],
+                ['  Setup Script v1.0', 't-dim'],
+                ['', ''],
+                ['  This script will generate your complete AI team.', 't-white'],
+                ['  Answer 5 questions and your team files will be created.', 't-white'],
+                ['', ''],
+                ['  -----------------------------------------------', 't-dim'],
+                ['', ''],
+            ], 50);
+
+            nextStep();
+        }
+
+        init();
+    </script>
+
+</body>
+</html>

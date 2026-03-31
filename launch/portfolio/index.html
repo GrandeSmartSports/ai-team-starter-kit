@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What I've Shipped — Daniel Grande | AI Team Builders</title>
+    <meta name="description" content="Real products shipped by one person directing 8 AI agents. 2 iOS apps, 5+ web apps, all in 7 weeks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-text: #1a1a2e;
+            --color-text-secondary: #555770;
+            --color-text-tertiary: #8888a0;
+            --color-bg: #ffffff;
+            --color-bg-subtle: #f8f9fc;
+            --color-border: #e8e8f0;
+            --color-accent: #4f46e5;
+            --color-accent-hover: #4338ca;
+            --color-accent-light: #eef2ff;
+            --color-success: #059669;
+            --color-ios: #007AFF;
+            --color-web: #8B5CF6;
+            --color-tool: #F59E0B;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        .nav-cta {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-accent) !important;
+            padding: 8px 16px;
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            color: white !important;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 72px 0 56px;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-accent);
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            padding: 32px 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+
+        /* Filter */
+        .filter-bar {
+            padding: 32px 0 24px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid var(--color-border);
+            background: white;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--color-text-tertiary);
+        }
+
+        .filter-btn.active {
+            background: var(--color-text);
+            color: white;
+            border-color: var(--color-text);
+        }
+
+        /* Project cards */
+        .projects {
+            padding: 0 0 72px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-card {
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: #d0d0e0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .project-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .project-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+
+        .badge-ios {
+            background: #EFF6FF;
+            color: var(--color-ios);
+        }
+
+        .badge-web {
+            background: #F5F3FF;
+            color: var(--color-web);
+        }
+
+        .badge-tool {
+            background: #FFFBEB;
+            color: var(--color-tool);
+        }
+
+        .project-tagline {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .detail {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-text-tertiary);
+        }
+
+        .detail-value {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: var(--color-bg-subtle);
+            color: var(--color-text-secondary);
+        }
+
+        /* Timeline */
+        .timeline {
+            padding: 72px 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .timeline h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline-items::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .timeline-item {
+            padding: 16px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 72px 0;
+            background: var(--color-bg-subtle);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: var(--color-accent);
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            box-shadow: 0 1px 3px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent-hover);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-row {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 1.4rem;
+            }
+
+            .project-card {
+                padding: 24px;
+            }
+
+            .project-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .project-details {
+                gap: 16px;
+            }
+
+            .timeline h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="../landing-page/index.html" class="nav-logo">AI Team Builders</a>
+            <div class="nav-links">
+                <a href="../landing-page/index.html">Home</a>
+                <a href="#" class="nav-cta">Join Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">Portfolio</div>
+            <h1>What I've shipped with my AI team</h1>
+            <p>Every product below was built by one person directing AI agents. No engineering team. No freelancers. Just me and my 8 agents.</p>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">iOS apps</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Web apps</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">AI agents</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">weeks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ios">iOS Apps</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="tool">Tools</button>
+        </div>
+    </div>
+
+    <section class="projects">
+        <div class="container">
+
+            <div class="project-card" data-type="ios">
+                <div class="project-header">
+                    <div class="project-name">CoachPilot</div>
+                    <span class="project-badge badge-ios">iOS App</span>
+                </div>
+                <div class="project-tagline">AI-powered sports coaching platform. Practice plan builder, game day lineup manager, player evaluations, parent communication. Built for youth softball and soccer coaches.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">In Development</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Team 1 (Relay) + Team 2 (Cortex)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Build time</span>
+                        <span class="detail-value">Ongoing (primary product)</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Swift</span>
+                    <span class="tech-tag">SwiftUI</span>
+                    <span class="tech-tag">CoreData</span>
+                    <span class="tech-tag">Claude API</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="ios">
+                <div class="project-header">
+                    <div class="project-name">OnDeck</div>
+                    <span class="project-badge badge-ios">iOS App</span>
+                </div>
+                <div class="project-tagline">Walkup music app for youth sports. Coaches assign songs to players. When it's their turn to bat, tap their name and the song plays. Also works as a PWA for teams that don't want to install an app.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">Live (PWA + iOS)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Forge (independent agent)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Build time</span>
+                        <span class="detail-value">1 session (~2 hours)</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Swift</span>
+                    <span class="tech-tag">SwiftUI</span>
+                    <span class="tech-tag">HTML/CSS/JS</span>
+                    <span class="tech-tag">PWA</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="web">
+                <div class="project-header">
+                    <div class="project-name">Food Trucks of Tehaleh</div>
+                    <span class="project-badge badge-web">Web App</span>
+                </div>
+                <div class="project-tagline">Community platform for tracking food trucks in the Tehaleh neighborhood. Residents check which trucks are coming, see schedules, leave reviews. V2 deployed and live.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">Live (v2)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Forge</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">URL</span>
+                        <span class="detail-value">ftot-pro.vercel.app</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">Supabase</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="web">
+                <div class="project-header">
+                    <div class="project-name">ReadQuest</div>
+                    <span class="project-badge badge-web">Web App</span>
+                </div>
+                <div class="project-tagline">Reading comprehension app built for my daughter Lily. Turns reading assignments into interactive quests with questions and rewards. PWA so it works on any device.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">Live (PWA)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Patch (design + QA agent)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Build time</span>
+                        <span class="detail-value">1 session</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML/CSS/JS</span>
+                    <span class="tech-tag">PWA</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="web">
+                <div class="project-header">
+                    <div class="project-name">LandscapeAI</div>
+                    <span class="project-badge badge-web">Web App</span>
+                </div>
+                <div class="project-tagline">AI-powered landscape design tool. Upload a photo of your yard, describe what you want, get a visualization. Built as a side project to test AI image generation workflows.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">Live</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Forge</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">AI Image Generation</span>
+                    <span class="tech-tag">Vercel</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="web">
+                <div class="project-header">
+                    <div class="project-name">BudgetView</div>
+                    <span class="project-badge badge-web">Web App</span>
+                </div>
+                <div class="project-tagline">Personal finance dashboard. Track income, expenses, and savings goals in one clean view. Built for my own family's budgeting needs.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">In Use (personal)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Forge</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="web">
+                <div class="project-header">
+                    <div class="project-name">MeetingBuilder</div>
+                    <span class="project-badge badge-web">Web App</span>
+                </div>
+                <div class="project-tagline">Real-time meeting transcription and note-taking tool. Join a meeting, get live transcription, AI-generated action items and summaries when the meeting ends.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">In Development</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Team 2 (Cortex)</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Web Audio API</span>
+                    <span class="tech-tag">Whisper</span>
+                    <span class="tech-tag">Claude API</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="tool">
+                <div class="project-header">
+                    <div class="project-name">AI Team Starter Kit</div>
+                    <span class="project-badge badge-tool">Tool</span>
+                </div>
+                <div class="project-tagline">The system that makes all of this possible. Setup script, identity anchoring, persistent memory, security rules, communication infrastructure, and automation. One command to generate a full AI team.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">Live (Open Source)</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">The entire AI team</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">GitHub</span>
+                        <span class="detail-value">GrandeSmartSports/ai-team-starter-kit</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Bash</span>
+                    <span class="tech-tag">Markdown</span>
+                    <span class="tech-tag">Shell Scripts</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-type="tool">
+                <div class="project-header">
+                    <div class="project-name">CortexEngine</div>
+                    <span class="project-badge badge-tool">Tool</span>
+                </div>
+                <div class="project-tagline">Standalone AI brain package. Reusable intelligence layer for apps that need AI decision-making. Powers the smart features in CoachPilot like practice plan generation and lineup optimization.</div>
+                <div class="project-details">
+                    <div class="detail">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value">In Development</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Built by</span>
+                        <span class="detail-value">Team 2 (Cortex + Axon)</span>
+                    </div>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Swift Package</span>
+                    <span class="tech-tag">Claude API</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2>The timeline</h2>
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 1 (Feb 12)</div>
+                    <div class="timeline-title">One agent, one terminal</div>
+                    <div class="timeline-desc">Started using Claude Code. Built a simple softball evaluation tool. Realized this could be bigger.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 2</div>
+                    <div class="timeline-title">First pair: Builder + QA</div>
+                    <div class="timeline-desc">Added a second agent for testing. Immediately hit memory and coordination problems. Started building solutions.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 3</div>
+                    <div class="timeline-title">Identity anchoring invented</div>
+                    <div class="timeline-desc">Agents kept drifting from their roles. Created files on disk that agents re-read to stay on track. Problem solved permanently.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 4</div>
+                    <div class="timeline-title">Scaled to 4 agents</div>
+                    <div class="timeline-desc">Added a Team Lead and a Designer. Built the communication system (inbox/outbox) to prevent chaos. Started shipping faster.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 5</div>
+                    <div class="timeline-title">Two sub-teams, 6 agents</div>
+                    <div class="timeline-desc">Split into Team 1 (Build) and Team 2 (Brain). Each with their own lead. Parallel work without conflicts.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 6</div>
+                    <div class="timeline-title">8 agents, daily shipping</div>
+                    <div class="timeline-desc">Added Forge and Patch as independent agents. Full team operational. Multiple products shipping in parallel.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 7 (now)</div>
+                    <div class="timeline-title">Packaged the system</div>
+                    <div class="timeline-desc">Built the AI Team Starter Kit. Created the course. Launched AI Team Builders community. Teaching what I learned.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to build like this?</h2>
+            <p>I teach my exact system in AI Team Builders. Starter kit, course, and community.</p>
+            <a href="#" class="cta-button">Join AI Team Builders - $29/month</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>AI Team Builders. Built with an 8-agent AI team.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.type === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

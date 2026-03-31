@@ -1,4 +1,4 @@
-# Pitch Copy — Ready to Post
+# Pitch Copy - Ready to Post
 
 ## Short Version (Chat Room / Twitter / Discord)
 
@@ -10,15 +10,15 @@ I run a team of 8 AI agents that coordinate, remember everything across sessions
 
 Most of you are paying $200/month to talk to one agent that forgets everything every session. Here's what you're missing:
 
-- Persistent memory — agents remember yesterday's work without you re-explaining
-- Identity anchoring — agents stay in their role during long sessions instead of drifting to generic behavior
-- Agent security rules — each agent has clear boundaries so they can't accidentally break things
-- Inbox/outbox communication — multiple agents coordinate without stepping on each other
-- Automated notifications — agents ping you when they're blocked instead of sitting silent
+- **Persistent memory.** Agents remember yesterday's work without you re-explaining.
+- **Identity anchoring.** Agents stay in their role during long sessions instead of drifting to generic behavior.
+- **Agent security rules.** Each agent has clear boundaries so they can't accidentally break things.
+- **Inbox/outbox communication.** Multiple agents coordinate without stepping on each other.
+- **Automated notifications.** Agents ping you when they're blocked instead of sitting silent.
 
 I packaged my exact system into a starter kit and built a community around it.
 
-Join AI Team Builders — $29/month founding member rate (locked forever for early members):
+Join AI Team Builders, $29/month founding member rate (locked forever for early members):
 {YOUR_SKOOL_LINK}
 
 You get the full starter kit, a step-by-step setup guide, and direct access to ask me anything. I post behind-the-scenes content weekly from my real work with my AI team.
@@ -47,31 +47,31 @@ But here's what broke first:
 
 So I built guardrails. One by one, over months, through real pain.
 
-**Identity anchoring** — a file each agent reads at session start that says "YOU ARE [Name]. You are NOT anyone else." Re-read every 10 messages. Identity drift solved.
+**Identity anchoring.** A file each agent reads at session start that says "YOU ARE [Name]. You are NOT anyone else." Re-read every 10 messages. Identity drift solved.
 
-**Persistent memory** — each agent has their own memory file. Read at start, updated during work. Cross-session continuity solved.
+**Persistent memory.** Each agent has their own memory file. Read at start, updated during work. Cross-session continuity solved.
 
-**Agent rules** — explicit security boundaries. What each agent CAN and CANNOT do. Anti-tunnel rules prevent workarounds. Safety solved.
+**Agent rules.** Explicit security boundaries. What each agent CAN and CANNOT do. Anti-tunnel rules prevent workarounds. Safety solved.
 
-**Inbox/outbox** — file-based communication. I drop work in an agent's inbox. They deliver to their outbox. A mailroom script watches for new files and pings me. Coordination solved.
+**Inbox/outbox.** File-based communication. I drop work in an agent's inbox. They deliver to their outbox. A mailroom script watches for new files and pings me. Coordination solved.
 
-**Source of truth** — one living document everyone reads. Current status, blockers, assignments. Alignment solved.
+**Source of truth.** One living document everyone reads. Current status, blockers, assignments. Alignment solved.
 
 The result? 2 iOS apps in the App Store. Multiple web apps in production. An AI brain engine. All built by my AI team while I focused on product decisions.
 
 I built a community where I teach this system and help you set up your own AI team.
 
-**AI Team Builders — $29/month founding member rate:**
+**AI Team Builders, $29/month founding member rate:**
 {YOUR_SKOOL_LINK}
 
 What you get:
 - The complete AI Team Starter Kit (setup script + templates + automation)
 - Full 5-module course (16 lessons):
-  - Module 1: The Foundation — first team, identity anchoring, first build session
-  - Module 2: Memory Systems — persistent memory, team memory, compounding knowledge
-  - Module 3: Rules & Security — agent rules, security essentials, communication patterns
-  - Module 4: Scaling — going from 2 to 8+ agents, team leads, quality at scale
-  - Module 5: Real-World Playbook — soul documents, advanced workflows, automation
+  - Module 1: The Foundation. First team, identity anchoring, first build session
+  - Module 2: Memory Systems. Persistent memory, team memory, compounding knowledge
+  - Module 3: Rules & Security. Agent rules, security essentials, communication patterns
+  - Module 4: Scaling. Going from 2 to 8+ agents, team leads, quality at scale
+  - Module 5: Real-World Playbook. Soul documents, advanced workflows, automation
 - Step-by-step guide: "Set Up Your AI Team in 10 Minutes"
 - Weekly behind-the-scenes from my real work with 8 AI agents
 - Direct access to ask me anything

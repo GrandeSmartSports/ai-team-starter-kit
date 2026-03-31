@@ -15,7 +15,7 @@ I run a team of 8 AI agents that coordinate, remember everything across sessions
 
 Most people using Claude Code or similar tools are talking to one agent that forgets everything every session. They re-explain context constantly. Their agent drifts off task. They can't coordinate multiple agents without chaos.
 
-I solved all of that — by accident — while building my own products. Over months of real work, I built a system that gives AI agents:
+I solved all of that (by accident) while building my own products. Over months of real work, I built a system that gives AI agents:
 
 - Persistent memory that survives across sessions
 - Identity anchoring that keeps agents in their role

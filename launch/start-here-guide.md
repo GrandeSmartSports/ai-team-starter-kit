@@ -1,4 +1,4 @@
-# Start Here — Set Up Your AI Team in 10 Minutes
+# Start Here - Set Up Your AI Team in 10 Minutes
 ## The only guide you need to go from one agent to a coordinated team
 
 ---
@@ -48,18 +48,18 @@ chmod +x setup.sh
 
 It asks you 5 questions:
 
-1. **Your name** — who's the boss
-2. **Your location** — just context
-3. **What you do** — one line
-4. **Your project name** — what are you building
-5. **What are you building** — one sentence
-6. **Your north star** — the question every decision asks
-7. **Where to install** — it suggests a folder, or pick your own
-8. **Team size** — start with Duo (2 agents) if this is your first time
+1. **Your name**: who's the boss
+2. **Your location**: just context
+3. **What you do**: one line
+4. **Your project name**: what are you building
+5. **What are you building**: one sentence
+6. **Your north star**: the question every decision asks
+7. **Where to install**: it suggests a folder, or pick your own
+8. **Team size**: start with Duo (2 agents) if this is your first time
 
-It also asks you to name your agents. Use real names — "Bolt" and "Scout" feel different than "Agent 1" and "Agent 2." Names create identity.
+It also asks you to name your agents. Use real names. "Bolt" and "Scout" feel different than "Agent 1" and "Agent 2." Names create identity.
 
-The script generates everything — CLAUDE.md, memory files, identity anchors, rules, inbox/outbox, automation scripts. Done in about 30 seconds.
+The script generates everything: CLAUDE.md, memory files, identity anchors, rules, inbox/outbox, automation scripts. Done in about 30 seconds.
 
 ---
 
@@ -67,7 +67,7 @@ The script generates everything — CLAUDE.md, memory files, identity anchors, r
 
 Each agent gets their own Claude Code terminal. If you chose 2 agents (Builder + QA), open 2 terminals.
 
-**Terminal 1 — Your Builder:**
+**Terminal 1: Your Builder:**
 
 ```bash
 cd ~/Desktop/YourProject   # wherever setup.sh installed
@@ -77,7 +77,7 @@ claude
 First message:
 > "You are Builder. Read agents/READ-THIS-FIRST-Builder.md"
 
-**Terminal 2 — Your QA:**
+**Terminal 2: Your QA:**
 
 ```bash
 cd ~/Desktop/YourProject
@@ -108,7 +108,7 @@ The agent will:
 
 Then hand it to QA:
 
-> "Builder just finished the landing page. Please run a full QA — check all links, test on mobile, verify the signup form works."
+> "Builder just finished the landing page. Please run a full QA. Check all links, test on mobile, verify the signup form works."
 
 QA tests everything and gives you a pass/fail report with bug details.
 
@@ -128,7 +128,7 @@ You'll hear a notification sound whenever an agent delivers work or needs attent
 
 ## How Memory Works
 
-After your first session, your agents will have written to their memory files. Next time you open a terminal and tell them to read their identity file, they'll also read their memory — and pick up right where they left off.
+After your first session, your agents will have written to their memory files. Next time you open a terminal and tell them to read their identity file, they'll also read their memory, and pick up right where they left off.
 
 No more re-explaining context. No more "let me read the codebase again." They remember.
 
@@ -140,7 +140,7 @@ In long sessions (10+ messages), AI agents start to forget who they are. Your "B
 
 The READ-THIS-FIRST files fix this. Every session starts with the agent reading: "YOU ARE [Name]. You are NOT anyone else." And there's a built-in check every 10 messages.
 
-I discovered this the hard way — my AI brain architect kept drifting to acting like my build engineer. Four incidents before I created the anchor file system. Now it doesn't happen.
+I discovered this the hard way. My AI brain architect kept drifting to acting like my build engineer. Four incidents before I created the anchor file system. Now it doesn't happen.
 
 ---
 
@@ -159,8 +159,8 @@ You're set up. Here's how to level up:
 - Read the Architecture doc in the docs/ folder
 
 **Ongoing:**
-- Follow the Behind the Scenes channel — I post what I'm building with my 8-agent team weekly
-- Ask questions in Help — I respond to everything
+- Follow the Behind the Scenes channel. I post what I'm building with my 8-agent team weekly
+- Ask questions in Help. I respond to everything
 - Share what's working for you so others can learn
 
 ---
@@ -183,8 +183,8 @@ It should ask you. If it doesn't, check agent-rules/[Name]-RULES.md to see the b
 
 ## You're Ready
 
-That's the whole system. Identity, memory, rules, communication. You now have what took me months to figure out — packaged into a 10-minute setup.
+That's the whole system. Identity, memory, rules, communication. You now have what took me months to figure out, packaged into a 10-minute setup.
 
 Go build something. Post your first win. Welcome to the team.
 
-— Daniel
+-- Daniel

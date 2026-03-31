@@ -14,10 +14,10 @@ A complete system for running multiple AI coding agents as a coordinated team. B
 
 Most people using AI coding tools (Claude Code, Cursor, etc.) hit the same walls:
 
-- **No memory** — every session starts from zero
-- **Identity drift** — agents forget their role in long sessions
-- **No coordination** — multiple agents step on each other
-- **No guardrails** — agents can accidentally break things
+- **No memory.** Every session starts from zero.
+- **Identity drift.** Agents forget their role in long sessions.
+- **No coordination.** Multiple agents step on each other.
+- **No guardrails.** Agents can accidentally break things.
 
 ### The Solution
 
@@ -92,7 +92,7 @@ ai-team-starter-kit/
 
 ## Who Built This
 
-I'm Daniel. I'm not a traditional developer — I'm a product builder who directs AI agents. I started with one Claude Code terminal 7 weeks ago. Now I run 8 coordinated agents that ship real products every day.
+I'm Daniel. I'm not a traditional developer. I'm a product builder who directs AI agents. I started with one Claude Code terminal 7 weeks ago. Now I run 8 coordinated agents that ship real products every day.
 
 This system wasn't planned. It was built one piece at a time, through real pain, while shipping real products. Every pattern in the course comes from a problem I hit and solved.
 
@@ -102,7 +102,7 @@ This system wasn't planned. It was built one piece at a time, through real pain,
 
 I run a paid community where I teach this system, share behind-the-scenes from my daily work, and help members set up their own AI teams.
 
-**AI Team Builders** — $29/month founding member rate (locked forever for early members).
+**AI Team Builders**, $29/month founding member rate (locked forever for early members).
 
 Includes: starter kit, full course, weekly content, direct access to ask questions, community of builders.
 
@@ -110,4 +110,4 @@ Includes: starter kit, full course, weekly content, direct access to ask questio
 
 ## License
 
-MIT — use it however you want.
+MIT. Use it however you want.
