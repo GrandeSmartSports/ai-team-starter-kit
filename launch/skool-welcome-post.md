@@ -13,7 +13,7 @@ I'm Daniel. I'm not a traditional developer — I'm a product builder who direct
 
 Here's why I built this community:
 
-6 months ago I started with one Claude Code terminal. One agent, no memory, starting fresh every session. It worked... barely.
+90 days ago I started with one Claude Code terminal. One agent, no memory, starting fresh every session. It worked... barely.
 
 Then I needed more agents. And everything broke. Agents forgot who they were. They overwrote each other's work. One almost deleted a database. There were no guardrails.
 
