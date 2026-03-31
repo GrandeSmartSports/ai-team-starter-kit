@@ -66,11 +66,12 @@ I built a community where I teach this system and help you set up your own AI te
 
 What you get:
 - The complete AI Team Starter Kit (setup script + templates + automation)
-- Full 4-module course (13 lessons):
+- Full 5-module course (16 lessons):
   - Module 1: The Foundation — first team, identity anchoring, first build session
   - Module 2: Memory Systems — persistent memory, team memory, compounding knowledge
   - Module 3: Rules & Security — agent rules, security essentials, communication patterns
   - Module 4: Scaling — going from 2 to 8+ agents, team leads, quality at scale
+  - Module 5: Real-World Playbook — soul documents, advanced workflows, automation
 - Step-by-step guide: "Set Up Your AI Team in 10 Minutes"
 - Weekly behind-the-scenes from my real work with 8 AI agents
 - Direct access to ask me anything

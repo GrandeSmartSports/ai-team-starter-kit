@@ -37,8 +37,17 @@
 | 2 | Team Leads and Sub-Teams | Hierarchical management, sub-agent pattern, daily rhythm |
 | 3 | Maintaining Quality at Scale | QA gates, code standards, regression testing, weekly reviews |
 
+## Module 5: Real-World Playbook (Bonus)
+*Advanced patterns from running an 8-agent team daily.*
+
+| # | Lesson | Key Concept |
+|---|--------|-------------|
+| 1 | The Soul Document | Capturing project identity and intent for better agent decisions |
+| 2 | Advanced Workflow Patterns | Polish, Discuss, Sprint, Parallel Build, Hot Potato patterns |
+| 3 | Automation and Scripting | Mailroom, signals, snapshots, custom automation |
+
 ---
 
-**Total: 4 modules, 13 lessons**
+**Total: 5 modules, 16 lessons**
 
 All lessons are text-based. Setup lessons (Module 1, Lesson 2) are tagged for video walkthrough.

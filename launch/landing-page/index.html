@@ -380,6 +380,109 @@
             width: 100%;
         }
 
+        /* -- FAQ Section -- */
+        .faq {
+            padding: 72px 0;
+        }
+
+        .faq h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 20px 0;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .faq-question {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--color-text-tertiary);
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding-top: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-top: 12px;
+        }
+
+        /* -- Testimonials Section -- */
+        .testimonials {
+            padding: 72px 0;
+            background: var(--color-bg-subtle);
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .testimonial-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .attribution {
+            font-size: 0.9rem;
+            color: var(--color-text-tertiary);
+        }
+
         /* -- About Section -- */
         .about {
             padding: 72px 0;
@@ -397,6 +500,26 @@
             color: var(--color-text-secondary);
             line-height: 1.8;
             margin-bottom: 16px;
+        }
+
+        /* -- Final CTA -- */
+        .final-cta {
+            padding: 72px 0;
+            background: var(--color-bg-subtle);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 28px;
         }
 
         /* -- Footer -- */
@@ -443,6 +566,24 @@
 
             .pricing-amount {
                 font-size: 2.4rem;
+            }
+
+            .proof-stats {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .testimonial-card {
+                padding: 24px;
+            }
+
+            .testimonial-card blockquote {
+                font-size: 1rem;
+            }
+
+            .faq h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -551,7 +692,7 @@
                 </li>
                 <li>
                     <div class="check"><svg viewBox="0 0 16 16"><path d="M3 8.5L6.5 12L13 4"></path></svg></div>
-                    <div><strong>4-Module Course</strong> — 13 lessons covering everything from your first agent to scaling a team of 8+. Text-based with setup videos.</div>
+                    <div><strong>5-Module Course</strong> — 16 lessons covering everything from your first agent to scaling a team of 8+. Text-based with setup videos.</div>
                 </li>
                 <li>
                     <div class="check"><svg viewBox="0 0 16 16"><path d="M3 8.5L6.5 12L13 4"></path></svg></div>
@@ -585,7 +726,7 @@
 
                 <ul class="pricing-features">
                     <li>AI Team Starter Kit (download)</li>
-                    <li>Full 4-module, 13-lesson course</li>
+                    <li>Full 5-module, 16-lesson course</li>
                     <li>Community access</li>
                     <li>Weekly behind-the-scenes content</li>
                     <li>Direct access to ask me questions</li>
@@ -593,6 +734,40 @@
                 </ul>
 
                 <a href="#" class="cta-button" id="join-button">Join AI Team Builders</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="section-label">FAQ</div>
+            <h2>Common questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What AI tools does this work with?</div>
+                    <div class="faq-answer">The system is built for Claude Code but the methodology works with any AI coding tool — Cursor, Windsurf, Aider, or any LLM-powered development environment. The core patterns (identity files, persistent memory, communication) are tool-agnostic.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to know how to code?</div>
+                    <div class="faq-answer">No. The whole point is that AI agents write the code. You need to be comfortable with a terminal (copy-pasting commands) and have basic computer literacy. If you can install an app and run a script, you can do this.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between this and just using Claude Code?</div>
+                    <div class="faq-answer">Claude Code gives you one agent with no memory between sessions. This system gives you a team of agents that remember everything, stay in their roles, communicate with each other, and follow security rules. It's the difference between one freelancer and a coordinated team.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How much does the AI itself cost?</div>
+                    <div class="faq-answer">You need a Claude subscription ($20/month for Pro, $100-200/month for heavy use). The starter kit itself doesn't add AI costs — it organizes the agents you're already paying for. Most members run 2-4 agents on their existing Claude subscription.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I cancel anytime?</div>
+                    <div class="faq-answer">Yes. Cancel anytime through Skool. You keep the starter kit and course materials you've downloaded. If you rejoin later, you'll pay the current price (not the founding rate).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if I'm already using multiple agents?</div>
+                    <div class="faq-answer">Even better. You probably already know the pain points — identity drift, no memory, agents stepping on each other. This system solves all of those with battle-tested patterns. You'll be able to apply the methodology to your existing setup immediately.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -612,6 +787,14 @@
         </div>
     </section>
 
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to build your AI team?</h2>
+            <p>Join the founding members. $29/month locked forever.</p>
+            <a href="#pricing" class="cta-button">Join AI Team Builders</a>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>AI Team Builders &middot; Built with an 8-agent AI team</p>
@@ -627,6 +810,16 @@
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const item = this.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
             });
         });
     </script>
